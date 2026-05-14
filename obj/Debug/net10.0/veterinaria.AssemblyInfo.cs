@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("veterinaria")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+86803905c864385ae65301b7bace8564cdbecebe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f5cb2ef04bda70dbe49feac51c6efac217ef999")]
 [assembly: System.Reflection.AssemblyProductAttribute("veterinaria")]
 [assembly: System.Reflection.AssemblyTitleAttribute("veterinaria")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

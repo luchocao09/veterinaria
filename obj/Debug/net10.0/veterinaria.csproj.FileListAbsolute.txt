@@ -125,3 +125,4 @@ C:\Users\lucho\source\repos\veterinaria\veterinaria\bin\Debug\net10.0\tr\Microso
 C:\Users\lucho\source\repos\veterinaria\veterinaria\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\lucho\source\repos\veterinaria\veterinaria\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\lucho\source\repos\veterinaria\veterinaria\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\lucho\source\repos\veterinaria\veterinaria\obj\Debug\net10.0\veterinaria.sourcelink.json

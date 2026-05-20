@@ -5,9 +5,9 @@
         public int Id { get; set; }
         public string Nombre { get; set; } = string.Empty;
 
-        public string Duenio { get; set; }
+        public string NombreDuenio { get; set; }
 
-        public string Vete { get; set; }
+        public string NombreVeterinario { get; set; }
 
         public int ClienteId { get; set; }
 

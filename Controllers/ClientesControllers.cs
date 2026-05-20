@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using veterinaria.Data; 
 using veterinaria.Models;
+using veterinaria.DTOs;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -24,8 +25,16 @@ public class ClientesController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<Cliente>> Post(Cliente cliente)
+    public async Task<ActionResult<Cliente>> Post(ClienteDto dto)
     {
+        var cliente = new Cliente
+        {
+            Nombre = dto.Nombre,
+            Apellido = dto.Apellido,
+            Fechanac = dto.Fechanac,
+            Telefono = dto.Telefono,
+            NombreMascota = dto.NombreMascota,
+        };
         _context.Clientes.Add(cliente);
         await _context.SaveChangesAsync();
         return Ok(cliente);
@@ -33,9 +42,15 @@ public class ClientesController : ControllerBase
 
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Put(int id, Cliente cliente)
+    public async Task<IActionResult> Put(int id, ClienteDto dto)
     {
-        _context.Entry(cliente).State = EntityState.Modified;
+        var cliente = await _context.Clientes.FindAsync(id);
+        if (cliente == null) return NotFound();
+        cliente.Nombre = dto.Nombre;
+        cliente.Apellido = dto.Apellido;
+        cliente.Fechanac = dto.Fechanac;
+        cliente.Telefono = dto.Telefono;
+        cliente.NombreMascota = dto.NombreMascota;
         await _context.SaveChangesAsync();
         return NoContent();
     }

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using veterinaria.Data;
 using veterinaria.Models;
+using veterinaria.DTOs;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -24,8 +25,15 @@ public class  VeterinariosController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<Veterinario>> Post(Veterinario veterinario)
+    public async Task<ActionResult<Veterinario>> Post(VeterinarioDto dto)
     {
+        var veterinario = new Veterinario
+        {
+            Nombre = dto.Nombre,
+            Apellido = dto.Apellido,
+            Telefono = dto.Telefono,
+            NombreMascota = dto.NombreMascota,
+        };
         _context.Veterinarios.Add(veterinario);
         await _context.SaveChangesAsync();
         return Ok(veterinario);
@@ -33,9 +41,14 @@ public class  VeterinariosController : ControllerBase
 
 
     [HttpPut("{id}")]
-    public async Task<IActionResult> Put(int id, Veterinario veterinario)
+    public async Task<IActionResult> Put(int id, VeterinarioDto dto)
     {
-        _context.Entry(veterinario).State = EntityState.Modified;
+        var veterinario = await _context.Veterinarios.FindAsync(id);
+        if (veterinario == null) return NotFound();
+        veterinario.Nombre = dto.Nombre;
+        veterinario.Apellido = dto.Apellido;
+        veterinario.Telefono = dto.Telefono;
+        veterinario.NombreMascota = dto.NombreMascota;
         await _context.SaveChangesAsync();
         return NoContent();
     }

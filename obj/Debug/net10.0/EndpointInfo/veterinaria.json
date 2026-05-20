@@ -63,17 +63,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Cliente"
+                "$ref": "#/components/schemas/ClienteDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Cliente"
+                "$ref": "#/components/schemas/ClienteDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Cliente"
+                "$ref": "#/components/schemas/ClienteDto"
               }
             }
           }
@@ -115,17 +115,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Cliente"
+                "$ref": "#/components/schemas/ClienteDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Cliente"
+                "$ref": "#/components/schemas/ClienteDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Cliente"
+                "$ref": "#/components/schemas/ClienteDto"
               }
             }
           }
@@ -221,17 +221,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Mascota"
+                "$ref": "#/components/schemas/MascotaDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Mascota"
+                "$ref": "#/components/schemas/MascotaDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Mascota"
+                "$ref": "#/components/schemas/MascotaDto"
               }
             }
           }
@@ -273,17 +273,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Mascota"
+                "$ref": "#/components/schemas/MascotaDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Mascota"
+                "$ref": "#/components/schemas/MascotaDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Mascota"
+                "$ref": "#/components/schemas/MascotaDto"
               }
             }
           }
@@ -370,17 +370,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Veterinario"
+                "$ref": "#/components/schemas/VeterinarioDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Veterinario"
+                "$ref": "#/components/schemas/VeterinarioDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Veterinario"
+                "$ref": "#/components/schemas/VeterinarioDto"
               }
             }
           }
@@ -422,17 +422,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Veterinario"
+                "$ref": "#/components/schemas/VeterinarioDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Veterinario"
+                "$ref": "#/components/schemas/VeterinarioDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Veterinario"
+                "$ref": "#/components/schemas/VeterinarioDto"
               }
             }
           }
@@ -487,7 +487,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "masco": {
+          "nombreMascota": {
             "type": "string",
             "nullable": true
           },
@@ -496,6 +496,32 @@
             "items": {
               "$ref": "#/components/schemas/Mascota"
             },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ClienteDto": {
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "apellido": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechanac": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "telefono": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombreMascota": {
+            "type": "string",
             "nullable": true
           }
         },
@@ -512,11 +538,11 @@
             "type": "string",
             "nullable": true
           },
-          "duenio": {
+          "nombreDuenio": {
             "type": "string",
             "nullable": true
           },
-          "vete": {
+          "nombreVeterinario": {
             "type": "string",
             "nullable": true
           },
@@ -533,6 +559,32 @@
           },
           "veterinario": {
             "$ref": "#/components/schemas/Veterinario"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MascotaDto": {
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "clienteId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "veterinarioId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombreDuenio": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombreVeterinario": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -556,7 +608,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "mascoa": {
+          "nombreMascota": {
             "type": "string",
             "nullable": true
           },
@@ -565,6 +617,28 @@
             "items": {
               "$ref": "#/components/schemas/Mascota"
             },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "VeterinarioDto": {
+        "type": "object",
+        "properties": {
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "apellido": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefono": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombreMascota": {
+            "type": "string",
             "nullable": true
           }
         },

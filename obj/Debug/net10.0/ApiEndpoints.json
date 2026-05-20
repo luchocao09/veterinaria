@@ -8,8 +8,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "cliente",
-        "Type": "veterinaria.Models.Cliente",
+        "Name": "dto",
+        "Type": "veterinaria.DTOs.ClienteDto",
         "IsRequired": true
       }
     ],
@@ -65,8 +65,8 @@
         "IsRequired": true
       },
       {
-        "Name": "cliente",
-        "Type": "veterinaria.Models.Cliente",
+        "Name": "dto",
+        "Type": "veterinaria.DTOs.ClienteDto",
         "IsRequired": true
       }
     ],
@@ -97,8 +97,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "mascota",
-        "Type": "veterinaria.Models.Mascota",
+        "Name": "dto",
+        "Type": "veterinaria.DTOs.MascotaDto",
         "IsRequired": true
       }
     ],
@@ -154,8 +154,8 @@
         "IsRequired": true
       },
       {
-        "Name": "mascota",
-        "Type": "veterinaria.Models.Mascota",
+        "Name": "dto",
+        "Type": "veterinaria.DTOs.MascotaDto",
         "IsRequired": true
       }
     ],
@@ -186,8 +186,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "veterinario",
-        "Type": "veterinaria.Models.Veterinario",
+        "Name": "dto",
+        "Type": "veterinaria.DTOs.VeterinarioDto",
         "IsRequired": true
       }
     ],
@@ -243,8 +243,8 @@
         "IsRequired": true
       },
       {
-        "Name": "veterinario",
-        "Type": "veterinaria.Models.Veterinario",
+        "Name": "dto",
+        "Type": "veterinaria.DTOs.VeterinarioDto",
         "IsRequired": true
       }
     ],

@@ -12,7 +12,7 @@
 
         public int Telefono { get; set; }
 
-        public string Masco { get; set; }
+        public string NombreMascota { get; set; }
 
         public List<Mascota> Mascotas { get; set; } = new List<Mascota>();
 
